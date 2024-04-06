@@ -87,6 +87,7 @@ export default function ProposalCard() {
                     </CardDescription>
                 </div>
             </div>
+            
             <CardFooter />
         </Card>
     );
