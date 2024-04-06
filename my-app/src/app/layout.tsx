@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "ServiceFlow",
+    title: "Flow",
     description: "",
 };
 
@@ -25,7 +25,9 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
+                    <div className="flex flex-col items-start justify-start mx-44 my-5 min-h-screen">
+                        {children}
+                    </div>
                 </ThemeProvider>
             </body>
         </html>
