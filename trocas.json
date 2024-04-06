@@ -1,0 +1,60 @@
+{
+  "trocas": [
+    {
+      "id": 1,
+      "user": "João Alvim",
+      "data": "01/01/2019",
+      "status": "Ongoing",
+      "type": [
+        "Service",
+        "Product"
+      ],
+      "offer_tome": "Explicação de programação",
+      "offer_toyou": "Aula de introduçao de Alemão",
+      "description_receive": "Estou a procura de alguém que me possa explicar programação e python ",
+      "description_offer": "Ofereço uma aula de introdução de Alemão sou fluente tenho o exame B2"
+    },
+    {
+      "id": 2,
+      "user": "Maria Silva",
+      "data": "15/02/2020",
+      "status": "Ongoing",
+      "type": [
+        "Service"
+      ],
+      "offer_tome": "Aula de Espanhol",
+      "description_receive": "Procuro alguém que possa me ensinar Espanhol"
+    },
+    {
+      "id": 1,
+      "user": "Ricardo Lucena ",
+      "data": "02/01/2019 12:00",
+      "status": "Ongoing",
+      "type": [
+        "Service"
+      ],
+      "offer_tome": "Ajuda a instalar o mongoDB",
+      "offer_toyou": "Aula de introduçao de Alemão",
+      "description_receive": "Estou a procura de alguém que me possa ajudar a instalar o mongoDB no meu computador."
+    },
+
+    {
+      "id": 4,
+      "user": "Ricardo"}
+
+  ],
+  "contra_proposta": [
+    {
+      "id": 3,
+      "user": "Mário Costa",
+      "data": "16/02/2020",
+      "status": "Pending",
+      "type": [
+        "Service"
+      ],
+      "offer": "Aula de Guitarra",
+      "description_offer": "Eu ofereço aulas de guitarra e gostava de aprender espanhol.",
+      "id_counter_offer": 2
+    }
+  ]
+}
