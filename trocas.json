@@ -71,7 +71,7 @@
             "data": "15/02/2020",
             "hora": "14:00",
             "status": "Ongoing",
-            "type": ["Service"],
+            "type": ["", "Service"],
             "offer_tome": "Aula de Espanhol",
             "description_receive": "Procuro alguém que possa me ensinar Espanhol"
         },
@@ -81,7 +81,7 @@
             "data": "02/01/2019",
             "hora": "15:40",
             "status": "Ongoing",
-            "type": ["Service"],
+            "type": ["Service", "Product"],
             "offer_tome": "Ajuda a instalar o mongoDB",
             "offer_toyou": "Aula de introduçao de Alemão",
             "description_receive": "Estou a procura de alguém que me possa ajudar a instalar o mongoDB no meu computador."
