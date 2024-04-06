@@ -1,8 +1,5 @@
 "use client";
 import * as React from "react";
-
-import { useParams, useRouter } from "next/navigation";
-
 import {
     Card,
     CardContent,
@@ -19,10 +16,55 @@ import { ArrowRight, Check, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Troca } from "@/app/my-proposals/page";
-import { CounterPropCardProps } from "@/components/mine/counter-prop-card-edit";
+import { useRouter } from "next/navigation";
+
+export type CounterPropCardProps = {
+    id: number;
+    user: string;
+    data: string;
+    hora: string;
+    status: "Accepted" | "Pending" | "Refused";
+    type: string;
+    offer: string;
+    description_offer: string;
+    id_counter_offer: number;
+};
+
 export default function CounterPropCard(data: CounterPropCardProps) {
+    const router = useRouter();
+    const handleAccept = async () => {
+        const response = await fetch(
+            `http://localhost:7777/contra_proposta/${data.id}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify({ status: "Accepted" }),
+            }
+        );
+
+        const responseProp = await fetch(
+            `http://localhost:7777/trocas/${data.id_counter_offer}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify({ status: "Completed" }),
+            }
+        );
+
+        router.refresh();
+    };
+    const handleRefuse = async () => {
+        const response = await fetch(
+            `http://localhost:7777/contra_proposta/${data.id}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify({ status: "Refused" }),
+            }
+        );
+
+        router.refresh();
+    };
+
     return (
-        <Card className="w-[600px] my-5 flex flex-col   ">
+        <Card className="w-[600px] my-5 flex flex-col">
             <CardHeader className="flex flex-row justify-between">
                 <div className="flex flex-row">
                     <Avatar>
@@ -31,7 +73,7 @@ export default function CounterPropCard(data: CounterPropCardProps) {
                     </Avatar>
                     <div className=" flex flex-col mx-2">
                         <div> {data.user}</div>
-                        <div className=" text-xs text-gray-500 ">
+                        <div className=" text-xs text-gray-500   ">
                             {" "}
                             {data.data} - {data.hora}
                         </div>
@@ -70,7 +112,19 @@ export default function CounterPropCard(data: CounterPropCardProps) {
                 </div>
             </div>
 
-            <CardFooter />
+            <CardFooter className="mt-4 flex flex-row justify-end  ">
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="mr-3"
+                    onClick={handleRefuse}
+                >
+                    <X className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon" onClick={handleAccept}>
+                    <Check className="h-4 w-4" />
+                </Button>
+            </CardFooter>
         </Card>
     );
 }

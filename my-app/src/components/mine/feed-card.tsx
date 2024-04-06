@@ -30,8 +30,6 @@ type Troca = {
 };
 
 export default function FeedCard(data: Troca) {
-    const [status, setStatus] = React.useState("PENDING");
-
     return (
         <Card className="w-[800px] my-5 flex flex-col hover:cursor-pointer group hover:border-primary/20 hover:shadow-md backdrop-blur-sm">
             <CardHeader className="flex flex-row justify-between">
@@ -50,15 +48,15 @@ export default function FeedCard(data: Troca) {
                 </div>
                 <Badge
                     variant={
-                        status === "PENDING" || status === "CONFIRMED"
+                        data.status === "Ongoing" || data.status === "Completed"
                             ? "default"
                             : "destructive"
                     }
                     className={`w-fit h-fit ${
-                        status === "CONFIRMED" ? "bg-green-400" : ""
+                        data.status === "Completed" ? "bg-green-400" : ""
                     }
                     
-                    ${status === "PENDING" ? "bg-yellow-300" : ""}
+                    ${data.status === "Ongoing" ? "bg-yellow-400" : ""}
                     
                    `}
                 >

@@ -6,7 +6,7 @@ import { Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const user = "José Fonte";
+const user = "Maria Silva";
 
 export type Troca = {
     id: string;
