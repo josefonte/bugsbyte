@@ -17,6 +17,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { Troca } from "@/app/my-proposals/page";
 import { useRouter } from "next/navigation";
+import { NextResponse } from "next/server";
 
 export type CounterPropCardProps = {
     id: number;
