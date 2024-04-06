@@ -8,7 +8,7 @@ import React from "react";
 
 const user = "José Fonte";
 
-type Troca = {
+export type Troca = {
     id: string;
     user: string;
     data: string;
@@ -29,6 +29,7 @@ export default function Page() {
             num: number;
         }[]
     >([]);
+
     React.useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(
