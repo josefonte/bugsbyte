@@ -1,43 +1,56 @@
 {
-    "contactos": [
+    "users": [
         {
+            "id": 1,
             "nome": "João Alvim",
-            "email": "joaoafonsoalvim@gmail.com" ,
-            "telemovel": "912345678"},
+            "email": "joaoafonsoalvim@gmail.com",
+            "telemovel": "912345678"
+        },
         {
+            "id": 2,
             "nome": "Maria Silva",
             "email": "mariasilva@gmail.com",
-             "telemovel": "91234213"},
-        {   
+            "telemovel": "91234213"
+        },
+        {
+            "id": 3,
             "nome": "Ricardo Lucena",
             "email": "ricardolucena@gmail.com",
-            "telemovel": "98765413"},
-        
+            "telemovel": "98765413"
+        },
         {
+            "id": 4,
             "nome": "Benjamim Rodrigues",
             "email": "benja@gmail.com",
             "telemovel": "217351765"
         },
         {
+            "id": 5,
             "nome": "Mário Costa",
             "email": "marioCosta@gmail.com"
         },
         {
+            "id": 6,
             "nome": "Henrique Guimarães",
             "email": "henrique guima@hotmail.com"
         },
         {
+            "id": 7,
             "nome": "Cesium",
-            "email": "cesium@gmail.com"},
+            "email": "cesium@gmail.com"
+        },
         {
+            "id": 8,
             "nome": "Pedro Figueiredo Pereira",
             "email": "pdp@gmail.com"
         },
         {
+            "id": 9,
             "nome": "José João Tatá",
             "email": "jjt@gmail.com",
             "telemovel": "9120000009"
         }
+    ]
 
     ],
     "trocas": [
