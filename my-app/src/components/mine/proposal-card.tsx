@@ -1,3 +1,7 @@
+"use client";
+
+import React from "react";
+
 import {
     Card,
     CardContent,
@@ -15,10 +19,11 @@ import Link from "next/link";
 
 const mockData = [];
 
-export default function FeedCard() {
+export default function ProposalCard() {
+    const [status, setStatus] = React.useState("CONFIRMED");
     return (
-        <Card className="w-[800px] my-5 flex flex-col hover:cursor-pointer group hover:border-primary/20 hover:shadow-md backdrop-blur-sm">
-            <CardHeader>
+        <Card className="w-[800px] my-5 flex flex-col  ">
+            <CardHeader className="flex flex-row justify-between">
                 <div className="flex flex-row">
                     <Avatar>
                         <AvatarImage src="https://github.com/shadcn.png" />
@@ -32,6 +37,22 @@ export default function FeedCard() {
                         </div>
                     </div>
                 </div>
+                <Badge
+                    variant={
+                        status === "PENDING" || status === "CONFIRMED"
+                            ? "default"
+                            : "destructive"
+                    }
+                    className={`w-fit h-fit ${
+                        status === "CONFIRMED" ? "bg-green-400" : ""
+                    }
+                    
+                    ${status === "PENDING" ? "bg-yellow-400" : ""}
+                    
+                   `}
+                >
+                    Closed
+                </Badge>
             </CardHeader>
 
             <div className="flex flex-row">
@@ -66,20 +87,7 @@ export default function FeedCard() {
                     </CardDescription>
                 </div>
             </div>
-
-            <CardFooter className="mt-4 flex flex-row justify-between pb-3">
-                <div>X Counter Offers</div>
-                <div className="group relative inline-flex h-8 w-10 items-center justify-center overflow-hidden font-medium text-primary transition-all duration-800 group-hover:w-32">
-                    <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-800 group-hover:opacity-100">
-                        <span className="flex flex-row gap-1 items-center text-sm group-hover:underline">
-                            View More
-                        </span>
-                    </div>
-                    <div className="absolute right-0 bg-background">
-                        <ArrowRight className="w-4 h-4" />
-                    </div>
-                </div>
-            </CardFooter>
+            <CardFooter />
         </Card>
     );
 }

@@ -38,7 +38,11 @@ export default function Home() {
     return (
         <>
             <div className="flex flex-row items-center justify-between w-[800px] self-center mb-2 align-baseline">
-                <h1 className="text-2xl font-medium	my-2">Feed</h1>
+                <Link href="/">
+                    {" "}
+                    <h1 className="text-2xl font-medium	my-2">Feed</h1>
+                </Link>
+
                 <div className="flex flex-row gap-2">
                     {" "}
                     <Link href="/my-proposals">
