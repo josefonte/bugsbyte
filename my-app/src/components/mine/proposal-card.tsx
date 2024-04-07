@@ -17,7 +17,6 @@ import { Badge } from "@/components/ui/badge";
 import { Troca } from "@/app/my-proposals/page";
 
 export default function ProposalCard(data: Troca) {
-    console.log("data", data);
     return (
         <Card className="w-[800px] my-5 flex flex-col  ">
             <CardHeader className="flex flex-row justify-between">

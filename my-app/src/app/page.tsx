@@ -25,6 +25,7 @@ import {
     CollapsibleContent,
     CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { off } from "process";
 
 type Troca = {
     id: string;
@@ -72,6 +73,36 @@ export default function Home() {
         };
         fetchData();
     }, []);
+    const [offer_title, setOfferTitle] = React.useState("");
+    const [offer_description, setOfferDescription] = React.useState("");
+    const [ask_title, setAskTitle] = React.useState("");
+    const [ask_description, setAskDescription] = React.useState("");
+
+    const handleCreate = async () => {
+        console.log(offer_title, offer_description);
+        console.log(ask_title, ask_description);
+
+        const response = await fetch(`http://localhost:7777/trocas/`, {
+            method: "POST",
+            body: JSON.stringify({
+                id: trocas.length + 1,
+                user: "shadcn",
+                data: "2021-10-10",
+                hora: "10:10",
+                offer_tome: ask_title,
+                offer_toyou: offer_title,
+                description_offer: offer_description,
+                description_receive: ask_description,
+                title: offer_title,
+                description: offer_description,
+                type: "service",
+                status: "Ongoing",
+            }),
+        });
+
+        const data = await response.json();
+        console.log(data);
+    };
 
     const getContraPropostasById = async (id: string) => {
         const response = await fetch(
@@ -128,9 +159,19 @@ export default function Home() {
                                         for?
                                     </p>
                                     <Label className="ml-1">Title</Label>
-                                    <Input placeholder="Title" />
+                                    <Input
+                                        placeholder="Title"
+                                        onChange={(e) =>
+                                            setOfferTitle(e.target.value)
+                                        }
+                                    />
                                     <Label className="ml-1">Description</Label>
-                                    <Textarea placeholder="Description" />
+                                    <Textarea
+                                        placeholder="Description"
+                                        onChange={(e) =>
+                                            setOfferDescription(e.target.value)
+                                        }
+                                    />
                                 </div>
                             </div>
 
@@ -149,11 +190,23 @@ export default function Home() {
                                             <Label className="ml-1">
                                                 Title
                                             </Label>
-                                            <Input placeholder="Title" />
+                                            <Input
+                                                placeholder="Title"
+                                                onChange={(e) =>
+                                                    setAskTitle(e.target.value)
+                                                }
+                                            />
                                             <Label className="ml-1">
                                                 Description
                                             </Label>
-                                            <Textarea placeholder="Description" />
+                                            <Textarea
+                                                placeholder="Description"
+                                                onChange={(e) =>
+                                                    setAskDescription(
+                                                        e.target.value
+                                                    )
+                                                }
+                                            />
                                         </div>
                                     </div>
                                 </CollapsibleContent>
@@ -163,7 +216,14 @@ export default function Home() {
                                     {" "}
                                     <Button variant="outline">Cancel</Button>
                                 </DialogClose>
-                                <Button variant="default">Create</Button>
+                                <DialogClose>
+                                    <Button
+                                        variant="default"
+                                        onClick={handleCreate}
+                                    >
+                                        Create
+                                    </Button>
+                                </DialogClose>
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
@@ -174,7 +234,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center justify-between w-full">
                 {trocas.map((tr, index) => (
-                    <Link href={`/proposals/${tr.id}`}>
+                    <Link key={index} href={`/proposals/${tr.id}`}>
                         <FeedCard
                             key={index}
                             id={tr.id}

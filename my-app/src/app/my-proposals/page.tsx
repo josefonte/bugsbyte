@@ -6,7 +6,7 @@ import { Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const user = "Maria Silva";
+const user = "Cesium";
 
 export type Troca = {
     id: string;
@@ -87,7 +87,7 @@ export default function Page() {
             <Separator orientation="horizontal" />
             <div className="flex flex-col items-center justify-between w-full">
                 {trocas.map((tr, index) => (
-                    <Link href={`/my-proposals/${tr.id}`}>
+                    <Link key={index} href={`/my-proposals/${tr.id}`}>
                         <FeedCard
                             key={index}
                             id={tr.id}

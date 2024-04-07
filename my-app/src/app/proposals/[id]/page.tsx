@@ -41,6 +41,8 @@ export default function Page() {
     const [loading, setLoading] = React.useState(true);
     const { id } = useParams();
 
+    const [title, setTitle] = React.useState("");
+    const [description, setDescription] = React.useState("");
     React.useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
@@ -67,6 +69,18 @@ export default function Page() {
         };
         fetchData();
     }, []);
+
+    const handleCreateCounter = async () => {
+        console.log(title, description);
+        /*
+        const response = await fetch(`http://localhost:7777/contra_proposta`, {
+            method: "POST",
+            body: JSON.stringify(),
+        });
+
+        const data = await response.json();*/
+    };
+
     return (
         <>
             <div className="flex flex-row justify-between w-[800px] self-center h-fit">
@@ -116,47 +130,35 @@ export default function Page() {
 
                             <div>
                                 <div className="flex flex-col gap-3">
-                                    <p>
-                                        What service or product are you looking
-                                        for?
-                                    </p>
+                                    <p>What service or product do you offer?</p>
                                     <Label className="ml-1">Title</Label>
-                                    <Input placeholder="Title" />
+                                    <Input
+                                        placeholder="Title"
+                                        onChange={(e) =>
+                                            setTitle(e.target.value)
+                                        }
+                                    />
                                     <Label className="ml-1">Description</Label>
-                                    <Textarea placeholder="Description" />
+                                    <Textarea
+                                        placeholder="Description"
+                                        onChange={(e) =>
+                                            setDescription(e.target.value)
+                                        }
+                                    />
                                 </div>
                             </div>
 
-                            <Collapsible>
-                                <CollapsibleTrigger className="flex flex-row justify-between w-full">
-                                    Do you want to offer a service or a product?{" "}
-                                    <ChevronDown
-                                        size={14}
-                                        strokeWidth={2.5}
-                                        className="self-center mr-2"
-                                    />
-                                </CollapsibleTrigger>
-                                <CollapsibleContent>
-                                    <div className="bg-background">
-                                        <div className="flex flex-col gap-3 mt-3">
-                                            <Label className="ml-1">
-                                                Title
-                                            </Label>
-                                            <Input placeholder="Title" />
-                                            <Label className="ml-1">
-                                                Description
-                                            </Label>
-                                            <Textarea placeholder="Description" />
-                                        </div>
-                                    </div>
-                                </CollapsibleContent>
-                            </Collapsible>
                             <DialogFooter>
                                 <DialogClose>
                                     {" "}
                                     <Button variant="outline">Cancel</Button>
                                 </DialogClose>
-                                <Button variant="default">Create</Button>
+                                <Button
+                                    variant="default"
+                                    onClick={handleCreateCounter}
+                                >
+                                    Create
+                                </Button>
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
@@ -172,6 +174,7 @@ export default function Page() {
                             description_offer={tr.description_offer}
                             status={tr.status}
                             type={tr.type}
+                            id_counter_offer={tr.id_counter_offer}
                         />
                     ))}
                 </div>

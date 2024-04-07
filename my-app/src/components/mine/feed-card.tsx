@@ -65,26 +65,6 @@ export default function FeedCard(data: Troca) {
             </CardHeader>
 
             <div className="flex flex-row">
-                {data.offer_toyou && (
-                    <div
-                        className={`flex flex-col p-3 mx-5  rounded-md border-solid border-[0.5px] border-green-300 ${
-                            data.offer_tome ? "basis-1/2" : "w-full"
-                        } `}
-                    >
-                        <div className="flex flex-row gap-2 mb-2 ">
-                            <CardTitle className="text-xl">Offer</CardTitle>
-                            <Badge variant="default" className="w-fit h-fit">
-                                {data.type[0]}
-                            </Badge>
-                        </div>
-
-                        <p>{data.offer_toyou}</p>
-
-                        <CardDescription>
-                            {data.description_offer}
-                        </CardDescription>
-                    </div>
-                )}
                 {data.offer_tome && (
                     <div
                         className={`flex flex-col p-3 mx-5 rounded-md border-solid border-[1px] border-orange-300 ${
@@ -102,6 +82,26 @@ export default function FeedCard(data: Troca) {
 
                         <CardDescription>
                             {data.description_receive}
+                        </CardDescription>
+                    </div>
+                )}
+                {data.offer_toyou && (
+                    <div
+                        className={`flex flex-col p-3 mx-5  rounded-md border-solid border-[0.5px] border-green-300 ${
+                            data.offer_tome ? "basis-1/2" : "w-full"
+                        } `}
+                    >
+                        <div className="flex flex-row gap-2 mb-2 ">
+                            <CardTitle className="text-xl">Offer</CardTitle>
+                            <Badge variant="default" className="w-fit h-fit">
+                                {data.type[0]}
+                            </Badge>
+                        </div>
+
+                        <p>{data.offer_toyou}</p>
+
+                        <CardDescription>
+                            {data.description_offer}
                         </CardDescription>
                     </div>
                 )}

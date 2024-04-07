@@ -49,7 +49,7 @@ export default function CounterPropCard(data: CounterPropCardProps) {
                 body: JSON.stringify({ status: "Completed" }),
             }
         );
-
+        console.log(responseProp);
         router.refresh();
     };
     const handleRefuse = async () => {
