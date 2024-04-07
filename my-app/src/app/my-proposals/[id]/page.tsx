@@ -16,6 +16,7 @@ import { CounterPropCardProps } from "@/components/mine/counter-prop-card-edit";
 
 export default function Page() {
     const [offer, setOffer] = React.useState<Troca | undefined>(undefined);
+
     const [counterProposals, setCounterProposals] = React.useState<
         CounterPropCardProps[]
     >([]);
@@ -43,11 +44,13 @@ export default function Page() {
                 }
             );
             const dataCounter = await responseCounter.json();
+
             setCounterProposals(dataCounter);
             setLoading(false);
         };
         fetchData();
     }, []);
+
     return (
         <>
             <div className="flex flex-row justify-between w-[800px] self-center h-fit">

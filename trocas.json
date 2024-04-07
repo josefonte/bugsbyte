@@ -123,17 +123,20 @@
       "description_receive": "Precisamos de um concerto cultural para os 29 anos do Cesium, em troca oferecemos almoço e uma tshirt do evento."
     },
     {
-      "id": "e5d7",
+      "id": 6,
       "user": "shadcn",
       "data": "2021-10-10",
       "hora": "10:10",
-      "offer_tome": "dasdasd",
-      "offer_toyou": "asdasdas",
-      "description_offer": "dasdasd",
-      "description_receive": "dasdasdas",
-      "title": "asdasdas",
-      "description": "dasdasd",
-      "type": "service",
+      "offer_tome": "Amor e Carinho",
+      "offer_toyou": "Procuro gajas",
+      "description_offer": "novinha",
+      "description_receive": "e um bolinho",
+      "title": "Procuro gajas",
+      "description": "novinha",
+      "type": [
+        "Service",
+        "Service"
+      ],
       "status": "Ongoing"
     }
   ],
@@ -182,7 +185,7 @@
       "user": "José João Tatá",
       "data": "11/05/2024",
       "hora": "15:00",
-      "status": "Pending",
+      "status": "Refused",
       "type": [
         "Service"
       ],
@@ -191,44 +194,43 @@
       "id_counter_offer": 7
     },
     {
-      "id": "8cde"
-    },
-    {
-      "id": "197e"
-    },
-    {
-      "id": "8434"
-    },
-    {
-      "id": "a4ab"
-    },
-    {
-      "id": "08e8",
-      "user": "shadcn",
+      "id": "1",
+      "user": "User6",
       "data": "2021-10-10",
       "hora": "10:10",
-      "offer_tome": "uma air fryer  toda catita",
-      "offer_toyou": "uma bicicleta",
-      "description_offer": "uma bicicleta com duas rodas funcionais e um sistemas de pedais de ultima hora que me permitem andar para a frente",
-      "description_receive": "uma airfryer que cozinha tds os alimentos possiveis e imaginaveis",
-      "title": "uma bicicleta",
-      "description": "uma bicicleta com duas rodas funcionais e um sistemas de pedais de ultima hora que me permitem andar para a frente",
-      "type": "service",
-      "status": "Ongoing"
+      "offer": "sou um gaja",
+      "description_offer": "e gosto de bolos\n",
+      "type": [
+        "Service"
+      ],
+      "status": "Pending",
+      "id_counter_offer": 6
     },
     {
-      "id": "c797",
-      "user": "shadcn",
+      "id": "3",
+      "user": "User7",
       "data": "2021-10-10",
       "hora": "10:10",
-      "offer_tome": "asdasd",
-      "offer_toyou": "asdasd",
-      "description_offer": "asdasd",
-      "description_receive": "asdasdas",
-      "title": "asdasd",
-      "description": "asdasd",
-      "type": "service",
-      "status": "Ongoing"
+      "offer": "oferta",
+      "description_offer": "ajsdnjasnd",
+      "type": [
+        "Service"
+      ],
+      "status": "Refused",
+      "id_counter_offer": "7"
+    },
+    {
+      "id": "1",
+      "user": "User1",
+      "data": "2021-10-10",
+      "hora": "10:10",
+      "offer": "tenho um pastor alemao",
+      "description_offer": "asjndjansd",
+      "type": [
+        "Service"
+      ],
+      "status": "Pending",
+      "id_counter_offer": "1"
     }
   ]
 }

@@ -79,9 +79,6 @@ export default function Home() {
     const [ask_description, setAskDescription] = React.useState("");
 
     const handleCreate = async () => {
-        console.log(offer_title, offer_description);
-        console.log(ask_title, ask_description);
-
         const response = await fetch(`http://localhost:7777/trocas/`, {
             method: "POST",
             body: JSON.stringify({
@@ -95,7 +92,7 @@ export default function Home() {
                 description_receive: ask_description,
                 title: offer_title,
                 description: offer_description,
-                type: "service",
+                type: ["Service", "Service"],
                 status: "Ongoing",
             }),
         });

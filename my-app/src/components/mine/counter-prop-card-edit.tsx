@@ -10,7 +10,16 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Check, X } from "lucide-react";
 import Link from "next/link";
@@ -31,8 +40,18 @@ export type CounterPropCardProps = {
     id_counter_offer: number;
 };
 
+type userInfo = {
+    id: string;
+    nome: string;
+    email: string;
+    telemovel?: string;
+};
+
 export default function CounterPropCard(data: CounterPropCardProps) {
     const router = useRouter();
+    const [userInfo, setUserInfo] = React.useState<userInfo | undefined>(
+        undefined
+    );
     const handleAccept = async () => {
         const response = await fetch(
             `http://localhost:7777/contra_proposta/${data.id}`,
@@ -63,15 +82,47 @@ export default function CounterPropCard(data: CounterPropCardProps) {
 
         router.refresh();
     };
+    const getUserInfo = async () => {
+        const response = await fetch(
+            `http://localhost:7777/users?nome=${data.user}`,
+            {
+                method: "get",
+            }
+        );
+        console.log(response);
+        const user = await response.json();
+
+        setUserInfo(user[0]);
+        router.refresh();
+    };
 
     return (
         <Card className="w-[600px] my-5 flex flex-col">
             <CardHeader className="flex flex-row justify-between">
                 <div className="flex flex-row">
-                    <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
+                    <Dialog>
+                        <DialogTrigger>
+                            <Avatar onClick={getUserInfo}>
+                                <AvatarImage src="https://github.com/shadcn.png" />
+                                <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>Contact</DialogTitle>
+                                <DialogDescription>
+                                    Nome : {userInfo?.nome}
+                                    <br />
+                                    Email: {userInfo?.email}
+                                    <br />
+                                    Telemóvel :{" "}
+                                    {userInfo?.telemovel
+                                        ? userInfo.telemovel
+                                        : "Não disponível"}
+                                </DialogDescription>
+                            </DialogHeader>
+                        </DialogContent>
+                    </Dialog>
                     <div className=" flex flex-col mx-2">
                         <div> {data.user}</div>
                         <div className=" text-xs text-gray-500   ">

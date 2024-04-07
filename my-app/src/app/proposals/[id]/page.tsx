@@ -32,6 +32,7 @@ import React from "react";
 import { Troca } from "@/app/my-proposals/page";
 import { CounterPropCardProps } from "@/components/mine/counter-prop-card-edit";
 import { useParams } from "next/navigation";
+import { off } from "process";
 
 export default function Page() {
     const [offer, setOffer] = React.useState<Troca | undefined>(undefined);
@@ -71,14 +72,23 @@ export default function Page() {
     }, []);
 
     const handleCreateCounter = async () => {
-        console.log(title, description);
-        /*
         const response = await fetch(`http://localhost:7777/contra_proposta`, {
             method: "POST",
-            body: JSON.stringify(),
+            body: JSON.stringify({
+                id: (counterProposals.length + 1).toString(),
+                user: "User" + id,
+                data: "2021-10-10",
+                hora: "10:10",
+                offer: title,
+                description_offer: description,
+                type: ["Service"],
+                status: "Pending",
+                id_counter_offer: offer?.id,
+            }),
         });
 
-        const data = await response.json();*/
+        const data = await response.json();
+        console.log(data);
     };
 
     return (
