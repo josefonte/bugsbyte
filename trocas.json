@@ -1,236 +1,212 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "nome": "João Alvim",
-      "email": "joaoafonsoalvim@gmail.com",
-      "telemovel": "912345678"
-    },
-    {
-      "id": "2",
-      "nome": "Maria Silva",
-      "email": "mariasilva@gmail.com",
-      "telemovel": "91234213"
-    },
-    {
-      "id": "3",
-      "nome": "Ricardo Lucena",
-      "email": "ricardolucena@gmail.com",
-      "telemovel": "98765413"
-    },
-    {
-      "id": "4",
-      "nome": "Benjamim Rodrigues",
-      "email": "benja@gmail.com",
-      "telemovel": "217351765"
-    },
-    {
-      "id": "5",
-      "nome": "Mário Costa",
-      "email": "marioCosta@gmail.com"
-    },
-    {
-      "id": "6",
-      "nome": "Henrique Guimarães",
-      "email": "henrique guima@hotmail.com"
-    },
-    {
-      "id": "7",
-      "nome": "Cesium",
-      "email": "cesium@gmail.com"
-    },
-    {
-      "id": "8",
-      "nome": "Pedro Figueiredo Pereira",
-      "email": "pdp@gmail.com"
-    },
-    {
-      "id": "9",
-      "nome": "José João Tatá",
-      "email": "jjt@gmail.com",
-      "telemovel": "9120000009"
-    }
-  ],
-  "trocas": [
-    {
-      "id": "1",
-      "user": "João Alvim",
-      "data": "01/01/2019",
-      "hora": "21:30",
-      "status": "Ongoing",
-      "type": [
-        "Service",
-        "Product"
-      ],
-      "offer_tome": "Explicação de programação",
-      "offer_toyou": "Aula de introduçao de Alemão",
-      "description_receive": "Estou a procura de alguém que me possa explicar programação e python ",
-      "description_offer": "Ofereço uma aula de introdução de Alemão sou fluente tenho o exame B2"
-    },
-    {
-      "id": "2",
-      "user": "Maria Silva",
-      "data": "15/02/2020",
-      "hora": "14:00",
-      "status": "Ongoing",
-      "type": [
-        "",
-        "Service"
-      ],
-      "offer_tome": "Aula de Espanhol",
-      "description_receive": "Procuro alguém que possa me ensinar Espanhol"
-    },
-    {
-      "id": "3",
-      "user": "Ricardo Lucena ",
-      "data": "02/01/2019",
-      "hora": "15:40",
-      "status": "Ongoing",
-      "type": [
-        "Service",
-        "Product"
-      ],
-      "offer_tome": "Ajuda a instalar o mongoDB",
-      "offer_toyou": "Aula de introduçao de Alemão",
-      "description_receive": "Estou a procura de alguém que me possa ajudar a instalar o mongoDB no meu computador."
-    },
-    {
-      "id": "4",
-      "user": "Benjamim Rodrigues",
-      "data": "06/04/2024",
-      "hora": "15:41",
-      "status": "Completed",
-      "type": [
-        "Service",
-        "Product"
-      ],
-      "offer_tome": "Apoio na instalação e setup de SQL",
-      "offer_toyou": "Dou saco de tangerinas caseiras",
-      "description_receive": "Preciso de ajuda no setup de uma base de dados SQL (15 min), em troca dou um saco de tangerinas de minha casa em Melgaço."
-    },
-    {
-      "id": "7",
-      "user": "Cesium",
-      "data": "10/05/2024",
-      "hora": "15:41",
-      "status": "Completed",
-      "type": [
-        "Service",
-        "Product"
-      ],
-      "offer_tome": "Concerto cultural para os 29 do Cesium",
-      "offer_toyou": "Oferecemos almoço e uma tshirt do evento",
-      "description_receive": "Precisamos de um concerto cultural para os 29 anos do Cesium, em troca oferecemos almoço e uma tshirt do evento."
-    },
-    {
-      "id": 6,
-      "user": "shadcn",
-      "data": "2021-10-10",
-      "hora": "10:10",
-      "offer_tome": "Amor e Carinho",
-      "offer_toyou": "Procuro gajas",
-      "description_offer": "novinha",
-      "description_receive": "e um bolinho",
-      "title": "Procuro gajas",
-      "description": "novinha",
-      "type": [
-        "Service",
-        "Service"
-      ],
-      "status": "Ongoing"
-    }
-  ],
-  "contra_proposta": [
-    {
-      "id": "5",
-      "user": "Mário Costa",
-      "data": "16/02/2020",
-      "hora": "15:00",
-      "status": "Pending",
-      "type": [
-        "Service"
-      ],
-      "offer": "Aula de Guitarra",
-      "description_offer": "Eu ofereço aulas de guitarra e gostava de aprender espanhol.",
-      "id_counter_offer": 2
-    },
-    {
-      "id": "6",
-      "user": "Henrique Guimarães",
-      "data": "7/04/2024",
-      "hora": "14:00",
-      "status": "Accepted",
-      "type": [
-        "Service"
-      ],
-      "offer": "Posso ajudar",
-      "description_offer": "Eu posso ajudar com a instalação do SQL",
-      "id_counter_offer": 4
-    },
-    {
-      "id": "8",
-      "user": "Pedro Figueiredo Pereira",
-      "data": "11/05/2024",
-      "hora": "14:00",
-      "status": "Accepted",
-      "type": [
-        "Service"
-      ],
-      "offer": "Posso ajudar, sei tocar umas músicas na guitarra",
-      "description_offer": "Consigo ajudar tocnao umas músicas pop na guitarra",
-      "id_counter_offer": 7
-    },
-    {
-      "id": "9",
-      "user": "José João Tatá",
-      "data": "11/05/2024",
-      "hora": "15:00",
-      "status": "Refused",
-      "type": [
-        "Service"
-      ],
-      "offer": "Posso ajudar, com música clássica",
-      "description_offer": "Falo em nome de um grupo de camara, Camerata Minhota e temos todo o gosto em participar no vosso evento",
-      "id_counter_offer": 7
-    },
-    {
-      "id": "1",
-      "user": "User6",
-      "data": "2021-10-10",
-      "hora": "10:10",
-      "offer": "sou um gaja",
-      "description_offer": "e gosto de bolos\n",
-      "type": [
-        "Service"
-      ],
-      "status": "Pending",
-      "id_counter_offer": 6
-    },
-    {
-      "id": "3",
-      "user": "User7",
-      "data": "2021-10-10",
-      "hora": "10:10",
-      "offer": "oferta",
-      "description_offer": "ajsdnjasnd",
-      "type": [
-        "Service"
-      ],
-      "status": "Refused",
-      "id_counter_offer": "7"
-    },
-    {
-      "id": "1",
-      "user": "User1",
-      "data": "2021-10-10",
-      "hora": "10:10",
-      "offer": "tenho um pastor alemao",
-      "description_offer": "asjndjansd",
-      "type": [
-        "Service"
-      ],
-      "status": "Pending",
-      "id_counter_offer": "1"
-    }
-  ]
+    "users": [
+        {
+            "id": "1",
+            "nome": "João Alvim",
+            "email": "joaoafonsoalvim@gmail.com",
+            "telemovel": "912345678"
+        },
+        {
+            "id": "2",
+            "nome": "Maria Silva",
+            "email": "mariasilva@gmail.com",
+            "telemovel": "91234213"
+        },
+        {
+            "id": "3",
+            "nome": "Ricardo Lucena",
+            "email": "ricardolucena@gmail.com",
+            "telemovel": "98765413"
+        },
+        {
+            "id": "4",
+            "nome": "Benjamim Rodrigues",
+            "email": "benja@gmail.com",
+            "telemovel": "217351765"
+        },
+        {
+            "id": "5",
+            "nome": "Mário Costa",
+            "email": "marioCosta@gmail.com"
+        },
+        {
+            "id": "6",
+            "nome": "Henrique Guimarães",
+            "email": "henrique guima@hotmail.com"
+        },
+        {
+            "id": "7",
+            "nome": "Cesium",
+            "email": "cesium@gmail.com"
+        },
+        {
+            "id": "8",
+            "nome": "Pedro Figueiredo Pereira",
+            "email": "pdp@gmail.com"
+        },
+        {
+            "id": "9",
+            "nome": "José João Tatá",
+            "email": "jjt@gmail.com",
+            "telemovel": "9120000009"
+        }
+    ],
+    "trocas": [
+        {
+            "id": "1",
+            "user": "João Alvim",
+            "data": "01/01/2019",
+            "hora": "21:30",
+            "status": "Ongoing",
+            "type": ["Service", "Product"],
+            "offer_tome": "Explicação de programação",
+            "offer_toyou": "Aula de introduçao de Alemão",
+            "description_receive": "Estou a procura de alguém que me possa explicar programação e python ",
+            "description_offer": "Ofereço uma aula de introdução de Alemão sou fluente tenho o exame B2"
+        },
+        {
+            "id": "2",
+            "user": "Maria Silva",
+            "data": "15/02/2020",
+            "hora": "14:00",
+            "status": "Ongoing",
+            "type": ["", "Service"],
+            "offer_tome": "Aula de Espanhol",
+            "description_receive": "Procuro alguém que possa me ensinar Espanhol"
+        },
+        {
+            "id": "3",
+            "user": "Ricardo Lucena ",
+            "data": "02/01/2019",
+            "hora": "15:40",
+            "status": "Ongoing",
+            "type": ["Service", "Product"],
+            "offer_tome": "Ajuda a instalar o mongoDB",
+            "offer_toyou": "Aula de introduçao de Alemão",
+            "description_receive": "Estou a procura de alguém que me possa ajudar a instalar o mongoDB no meu computador."
+        },
+        {
+            "id": "4",
+            "user": "Benjamim Rodrigues",
+            "data": "06/04/2024",
+            "hora": "15:41",
+            "status": "Completed",
+            "type": ["Service", "Product"],
+            "offer_tome": "Apoio na instalação e setup de SQL",
+            "offer_toyou": "Dou saco de tangerinas caseiras",
+            "description_receive": "Preciso de ajuda no setup de uma base de dados SQL (15 min), em troca dou um saco de tangerinas de minha casa em Melgaço."
+        },
+        {
+            "id": "7",
+            "user": "Cesium",
+            "data": "10/05/2024",
+            "hora": "15:41",
+            "status": "Completed",
+            "type": ["Service", "Product"],
+            "offer_tome": "Concerto cultural para os 29 do Cesium",
+            "offer_toyou": "Oferecemos almoço e uma tshirt do evento",
+            "description_receive": "Precisamos de um concerto cultural para os 29 anos do Cesium, em troca oferecemos almoço e uma tshirt do evento."
+        }
+    ],
+    "contra_proposta": [
+        {
+            "id": "5",
+            "user": "Mário Costa",
+            "data": "16/02/2020",
+            "hora": "15:00",
+            "status": "Pending",
+            "type": ["Service"],
+            "offer": "Aula de Guitarra",
+            "description_offer": "Eu ofereço aulas de guitarra e gostava de aprender espanhol.",
+            "id_counter_offer": 2
+        },
+        {
+            "id": "6",
+            "user": "Henrique Guimarães",
+            "data": "7/04/2024",
+            "hora": "14:00",
+            "status": "Pending",
+            "type": ["Service"],
+            "offer": "Posso ajudar",
+            "description_offer": "Eu posso ajudar com a instalação do SQL",
+            "id_counter_offer": 4
+        },
+        {
+            "id": "8",
+            "user": "Pedro Figueiredo Pereira",
+            "data": "11/05/2024",
+            "hora": "14:00",
+            "status": "Refused",
+            "type": ["Service"],
+            "offer": "Posso ajudar, sei tocar umas músicas na guitarra",
+            "description_offer": "Consigo ajudar tocnao umas músicas pop na guitarra",
+            "id_counter_offer": 7
+        },
+        {
+            "id": "9",
+            "user": "José João Tatá",
+            "data": "11/05/2024",
+            "hora": "15:00",
+            "status": "Refused",
+            "type": ["Service"],
+            "offer": "Posso ajudar, com música clássica",
+            "description_offer": "Falo em nome de um grupo de camara, Camerata Minhota e temos todo o gosto em participar no vosso evento",
+            "id_counter_offer": 7
+        },
+        {
+            "id": "3",
+            "user": "User7",
+            "data": "2021-10-10",
+            "hora": "10:10",
+            "offer": "oferta",
+            "description_offer": "ajsdnjasnd",
+            "type": ["Service"],
+            "status": "Refused",
+            "id_counter_offer": "7"
+        },
+        {
+            "id": "1",
+            "user": "User1",
+            "data": "2021-10-10",
+            "hora": "10:10",
+            "offer": "tenho um pastor alemao",
+            "description_offer": "asjndjansd",
+            "type": ["Service"],
+            "status": "Pending",
+            "id_counter_offer": "1"
+        },
+        {
+            "id": "4",
+            "user": "User7",
+            "data": "2021-10-10",
+            "hora": "10:10",
+            "offer": "Nova Proposta",
+            "description_offer": "descriçao super fixe\n",
+            "type": ["Service"],
+            "status": "Accepted",
+            "id_counter_offer": "7"
+        },
+        {
+            "id": "5",
+            "user": "User7",
+            "data": "2021-10-10",
+            "hora": "10:10",
+            "offer": "ashdashdhua",
+            "description_offer": "sadasuhduhasduh",
+            "type": ["Service"],
+            "status": "Pending",
+            "id_counter_offer": "7"
+        },
+        {
+            "id": "2",
+            "user": "User1",
+            "data": "2021-10-10",
+            "hora": "10:10",
+            "offer": "asdasd",
+            "description_offer": "sajndajsnd",
+            "type": ["Service"],
+            "status": "Pending",
+            "id_counter_offer": "1"
+        }
+    ]
 }

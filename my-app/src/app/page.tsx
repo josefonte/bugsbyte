@@ -4,7 +4,8 @@ import FeedCard from "@/components/mine/feed-card";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, FileText, Plus } from "lucide-react";
+import { ChevronDown, FileText, MoonIcon, Plus, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 import {
     Dialog,
     DialogClose,
@@ -41,6 +42,7 @@ type Troca = {
 };
 
 export default function Home() {
+    const { theme, setTheme } = useTheme();
     const [trocas, setTrocas] = React.useState<Troca[]>([]);
     const [contraPropostas, setContraPropostas] = React.useState<
         {
@@ -111,6 +113,9 @@ export default function Home() {
         const data = await response.json();
 
         return data.length;
+    };
+    const handleThemeClicked = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
     };
 
     return (
@@ -224,6 +229,15 @@ export default function Home() {
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={handleThemeClicked}
+                    >
+                        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        <span className="sr-only">Toggle theme</span>
+                    </Button>
                 </div>
             </div>
 

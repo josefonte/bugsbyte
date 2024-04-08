@@ -163,12 +163,14 @@ export default function Page() {
                                     {" "}
                                     <Button variant="outline">Cancel</Button>
                                 </DialogClose>
-                                <Button
-                                    variant="default"
-                                    onClick={handleCreateCounter}
-                                >
-                                    Create
-                                </Button>
+                                <DialogClose>
+                                    <Button
+                                        variant="default"
+                                        onClick={handleCreateCounter}
+                                    >
+                                        Create
+                                    </Button>
+                                </DialogClose>
                             </DialogFooter>
                         </DialogContent>
                     </Dialog>
